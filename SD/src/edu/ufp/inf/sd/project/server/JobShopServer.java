@@ -1,6 +1,5 @@
 package edu.ufp.inf.sd.project.server;
-
-import edu.ufp.inf.sd.rmi.util.rmisetup.SetupContextRMI;
+import edu.ufp.inf.sd.project.util.rmisetup.SetupContextRMI;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
