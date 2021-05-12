@@ -4,7 +4,7 @@ import edu.ufp.inf.sd.project.server.JobShopRI;
 import edu.ufp.inf.sd.project.util.geneticalgorithm.CrossoverStrategies;
 import edu.ufp.inf.sd.project.util.geneticalgorithm.GeneticAlgorithmJSSP;
 import edu.ufp.inf.sd.project.util.tabusearch.TabuSearchJSSP;
-import edu.ufp.inf.sd.rmi.util.rmisetup.SetupContextRMI;
+import edu.ufp.inf.sd.project.util.rmisetup.SetupContextRMI;
 import java.rmi.RemoteException;
 import java.rmi.NotBoundException;
 import java.rmi.Remote;
@@ -88,6 +88,7 @@ public class JobShopClient {
     
     private void playService() {
         try {
+
             //============ Call TS remote service ============
             String jsspInstancePath = "edu/ufp/inf/sd/project/data/la01.txt";
             int makespan = this.jobShopRI.runTS(jsspInstancePath);

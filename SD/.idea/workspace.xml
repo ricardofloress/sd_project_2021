@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e70013d-7811-4cc2-8be4-5df555df787c" name="Default Changelist" comment="" />
+    <list default="true" id="7e70013d-7811-4cc2-8be4-5df555df787c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/util/rmisetup/SetupContextRMI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/util/threading/ThreadPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/JobShopClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/JobShopClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/JobShopServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/JobShopServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/util/geneticalgorithm/GeneticAlgorithmJSSP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/util/geneticalgorithm/GeneticAlgorithmJSSP.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +135,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619977785066" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/util" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -141,6 +149,13 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\RicardoFlores\Desktop\faculdade\sistema_distribuidos\sd_project_2021\SD\src\edu\ufp\inf\sd\project\util" />
+      <recent name="$PROJECT_DIR$/src/edu/ufp/inf/sd/rabbitmqservices" />
+      <recent name="$PROJECT_DIR$/src/edu/ufp/inf/sd" />
+      <recent name="$PROJECT_DIR$/src/edu/ufp/inf/sd/rmi/_06_visitor/runscripts" />
+      <recent name="$PROJECT_DIR$/src/edu/ufp/inf/sd/rmi" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/edu/ufp/inf/sd/rabbitmqservices" />
       <recent name="$PROJECT_DIR$/src/edu/ufp/inf/sd" />
@@ -151,13 +166,6 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="edu.ufp.inf.sd.rmi._02_calculator.client" />
       <recent name="edu.ufp.inf.sd.rmi._02_calculator.server" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/edu/ufp/inf/sd/rabbitmqservices" />
-      <recent name="$PROJECT_DIR$/src/edu/ufp/inf/sd" />
-      <recent name="$PROJECT_DIR$/src/edu/ufp/inf/sd/rmi/_06_visitor/runscripts" />
-      <recent name="$PROJECT_DIR$/src/edu/ufp/inf/sd/rmi" />
-      <recent name="$PROJECT_DIR$/src/edu/ufp/inf/sd/rmi/_05_observer/runscripts" />
     </key>
   </component>
   <component name="RunManager">
@@ -205,7 +213,7 @@
       <workItem from="1619973967376" duration="1384000" />
       <workItem from="1620028304802" duration="234000" />
       <workItem from="1620595698019" duration="1342000" />
-      <workItem from="1620856700283" duration="1181000" />
+      <workItem from="1620856700283" duration="5522000" />
     </task>
     <servers />
   </component>
