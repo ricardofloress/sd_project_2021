@@ -12,7 +12,7 @@
 
 @REM ======================== CHANGE BELOW ACCORDING YOUR PROJECT and PC SETTINGS ========================
 @REM ==== PC STUFF ====
-@Set USERNAME=rui
+@Set USERNAME=Ricardo
 
 @Set WORKDRIVE=C
 @Set JDK=%WORKDRIVE%:\Programas\Java\jdk1.8.0_60
