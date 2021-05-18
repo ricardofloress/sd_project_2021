@@ -1,0 +1,75 @@
+package edu.ufp.inf.sd.project.server;
+
+import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class DBMockup implements Serializable {
+
+    private ArrayList<ClientUser> clientUsers;
+    private HashMap<String, UserSessionRI> sessions;
+
+    public DBMockup() {
+        this.clientUsers = new ArrayList<>();
+        sessions = new HashMap<>();
+        ClientUser clientUser = new ClientUser("1", "1");
+        clientUser.setCredits(123456);
+        clientUsers.add(clientUser);
+
+    }
+
+    public void register(String u, String p) {
+        if (!exists(u, p)) {
+            ClientUser clientUser = new ClientUser(u, p);
+            System.out.println("DbMockup: " + clientUser.toString());
+            clientUsers.add(clientUser);
+        }
+    }
+
+    public boolean exists(String u, String p) {
+        for (ClientUser usr : this.clientUsers) {
+            if (usr.getUname().compareTo(u) == 0 && usr.getPassword().compareTo(p) == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public ArrayList<ClientUser> getClientUsers() {
+        return clientUsers;
+    }
+
+    public HashMap<String, UserSessionRI> getSessions() {
+        return sessions;
+    }
+
+    public void addSession(String username, UserSessionRI sessionRI) {
+        sessions.put(username, sessionRI);
+    }
+
+    public void removeSession(UserSessionRI sessionRI) {
+        if (this.sessions.containsValue(sessionRI)) {
+            for (String key : this.sessions.keySet()) {
+                if (this.sessions.get(key).equals(sessionRI)) {
+                    this.sessions.remove(key);
+                    Logger.getLogger(this.getClass().getName()).log(Level.INFO, "The User {0} Logged out", new Object[]{key});
+                }
+            }
+        }
+    }
+
+
+    public ClientUser getClientUser(String uname) throws RemoteException {
+        for (ClientUser ClientUser : clientUsers) {
+            if (ClientUser.getUname().equals(uname)) {
+                return ClientUser;
+            }
+        }
+        return null;
+    }
+
+
+}

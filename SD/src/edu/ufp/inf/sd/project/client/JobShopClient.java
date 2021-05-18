@@ -1,6 +1,8 @@
 package edu.ufp.inf.sd.project.client;
 
 import edu.ufp.inf.sd.project.server.JobShopRI;
+import edu.ufp.inf.sd.project.server.UserFactoryRI;
+import edu.ufp.inf.sd.project.server.UserSessionRI;
 import edu.ufp.inf.sd.project.util.geneticalgorithm.CrossoverStrategies;
 import edu.ufp.inf.sd.project.util.geneticalgorithm.GeneticAlgorithmJSSP;
 import edu.ufp.inf.sd.project.util.tabusearch.TabuSearchJSSP;
@@ -34,7 +36,7 @@ public class JobShopClient {
     /**
      * Remote interface that will hold the Servant proxy
      */
-    private JobShopRI jobShopRI;
+    private UserFactoryRI userFactoryRI;
 
     public static void main(String[] args) {
         if (args != null && args.length < 2) {
@@ -75,7 +77,7 @@ public class JobShopClient {
                 Logger.getLogger(this.getClass().getName()).log(Level.INFO, "going MAIL_TO_ADDR lookup service @ {0}", serviceUrl);
                 
                 //============ Get proxy MAIL_TO_ADDR HelloWorld service ============
-                jobShopRI = (JobShopRI) registry.lookup(serviceUrl);
+                userFactoryRI = (UserFactoryRI) registry.lookup(serviceUrl);
             } else {
                 Logger.getLogger(this.getClass().getName()).log(Level.INFO, "registry not bound (check IPs). :(");
                 //registry = LocateRegistry.createRegistry(1099);
@@ -83,29 +85,17 @@ public class JobShopClient {
         } catch (RemoteException | NotBoundException ex) {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
         }
-        return jobShopRI;
+        return userFactoryRI;
     }
     
     private void playService() {
         try {
-
-            //============ Call TS remote service ============
-            String jsspInstancePath = "edu/ufp/inf/sd/project/data/la01.txt";
-            int makespan = this.jobShopRI.runTS(jsspInstancePath);
-            Logger.getLogger(this.getClass().getName()).log(Level.INFO,
-                    "[TS] Makespan for {0} = {1}",
-                    new Object[]{jsspInstancePath,String.valueOf(makespan)});
-
-
-            //============ Call GA ============
-            String queue = "jssp_ga";
-            String resultsQueue = queue + "_results";
-            CrossoverStrategies strategy = CrossoverStrategies.ONE;
-            Logger.getLogger(this.getClass().getName()).log(Level.INFO,
-                    "GA is running for {0}, check queue {1}",
-                    new Object[]{jsspInstancePath,resultsQueue});
-            GeneticAlgorithmJSSP ga = new GeneticAlgorithmJSSP(jsspInstancePath, queue, strategy);
-            ga.run();
+            this.userFactoryRI.register("user", "pass");
+            UserSessionRI userSessionRI = this.userFactoryRI.login("user", "pass");
+            if(userSessionRI != null){
+                userSessionRI.print("Login Succeeded");
+            }
+            userSessionRI.logout();
 
         } catch (RemoteException ex) {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
