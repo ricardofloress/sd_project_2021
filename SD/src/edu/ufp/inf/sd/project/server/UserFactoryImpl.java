@@ -2,6 +2,7 @@ package edu.ufp.inf.sd.project.server;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 public class UserFactoryImpl extends UnicastRemoteObject implements UserFactoryRI {
 
@@ -28,7 +29,7 @@ public class UserFactoryImpl extends UnicastRemoteObject implements UserFactoryR
             if (!this.db.getSessions().containsKey(uname)) {
                 for (ClientUser user : db.getClientUsers()) {
                     if (user.getUname().equals(uname)) {
-                        UserSessionRI userSessionRI = new UserSessionImpl(this);
+                        UserSessionRI userSessionRI = new UserSessionImpl(this, new ClientUser(uname, pw));
                         this.db.addSession(uname, userSessionRI);     // insere no hashmap de sessoes
                         return userSessionRI;
                     }
@@ -38,6 +39,16 @@ public class UserFactoryImpl extends UnicastRemoteObject implements UserFactoryR
             }
         }
         return null;
+    }
+
+    @Override
+    public void createJobGroup(SubjectRI subjectRI) throws RemoteException {
+        this.db.addJobGroup(subjectRI);
+    }
+
+    @Override
+    public ArrayList<SubjectRI> listJobGroups() throws RemoteException {
+        return this.db.getSubjectRIS();
     }
 
     public DBMockup getDb() {
