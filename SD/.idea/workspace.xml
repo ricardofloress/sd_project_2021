@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5924ddd1-5384-46ec-b057-930ef156a0f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/ClientUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/DBMockup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserFactoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserFactoryRI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserSessionImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserSessionRI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Simple_Logging_Facade_for_Java_1_7_30.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/com_rabbitmq_amqp_client_5_11_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/ObserverImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/ObserverRI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/WorkerState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/SubjectImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/SubjectRI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SD.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/JobShopClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/JobShopClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/JobShopServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/JobShopServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/util/tabusearch/TabuSearchJSSP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/util/tabusearch/TabuSearchJSSP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/DBMockup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/DBMockup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserFactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserFactoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserFactoryRI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserFactoryRI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserSessionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserSessionImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserSessionRI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserSessionRI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -80,17 +78,18 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="edu.ufp.inf.sd.rmi._06_visitor.server" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\RicardoFlores\Desktop\faculdade\sistema_distribuidos\sd_project_2021\SD\src\edu\ufp\inf\sd\project\client" />
+      <recent name="C:\Users\RicardoFlores\Desktop\faculdade\sistema_distribuidos\sd_project_2021\SD\src\edu\ufp\inf\sd\project\server" />
       <recent name="C:\Users\RicardoFlores\Desktop\faculdade\sistema_distribuidos\sd_hello_world\src\edu\ufp\inf\sd\rabbitmqservices" />
       <recent name="C:\Users\RicardoFlores\Desktop\faculdade\sistema_distribuidos\sd_hello_world\src\edu\ufp\inf\sd\rmi" />
       <recent name="C:\Users\RicardoFlores\Desktop\faculdade\sistema_distribuidos\sd_hello_world\src\edu\ufp\inf\sd\rmi\_04_diglib\server" />
-      <recent name="C:\Users\RicardoFlores\Desktop\faculdade\sistema_distribuidos\sd_hello_world\src\edu\ufp\inf\sd\rmi\_02_calculator\client" />
-      <recent name="C:\Users\RicardoFlores\Desktop\faculdade\sistema_distribuidos\sd_hello_world\src\edu\ufp\inf\sd\rmi\_02_calculator\server" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\RicardoFlores\Desktop\faculdade\sistema_distribuidos\sd_hello_world\src\edu\ufp\inf\sd\rabbitmqservices\_04_topics\producer" />
@@ -104,6 +103,21 @@
       <recent name="edu.ufp.inf.sd.rmi._05_observer.client" />
       <recent name="edu.ufp.inf.sd.rmi._04_diglib.server" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -128,10 +142,35 @@
       <workItem from="1621288719823" duration="338000" />
       <workItem from="1621289122618" duration="237000" />
       <workItem from="1621289472924" duration="4896000" />
+      <workItem from="1621332803353" duration="9326000" />
+      <workItem from="1621459939646" duration="8492000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/SubjectImpl.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

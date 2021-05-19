@@ -1,5 +1,7 @@
 package edu.ufp.inf.sd.project.server;
 
+import edu.ufp.inf.sd.project.client.ObserverRI;
+
 import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -11,6 +13,9 @@ public class DBMockup implements Serializable {
 
     private ArrayList<ClientUser> clientUsers;
     private HashMap<String, UserSessionRI> sessions;
+    private ArrayList<SubjectRI> subjectRIS;
+    private ArrayList<ObserverRI> workers;
+
 
     public DBMockup() {
         this.clientUsers = new ArrayList<>();
@@ -18,7 +23,8 @@ public class DBMockup implements Serializable {
         ClientUser clientUser = new ClientUser("1", "1");
         clientUser.setCredits(123456);
         clientUsers.add(clientUser);
-
+        this.subjectRIS = new ArrayList<>();
+        this.workers = new ArrayList<>();
     }
 
     public void register(String u, String p) {
@@ -38,6 +44,14 @@ public class DBMockup implements Serializable {
         return false;
     }
 
+    public void addJobGroup(SubjectRI subjectRI) {
+        this.subjectRIS.add(subjectRI);
+    }
+
+    public void addWorker(ObserverRI observerRI) {
+        this.workers.add(observerRI);
+    }
+
     public ArrayList<ClientUser> getClientUsers() {
         return clientUsers;
     }
@@ -48,6 +62,16 @@ public class DBMockup implements Serializable {
 
     public void addSession(String username, UserSessionRI sessionRI) {
         sessions.put(username, sessionRI);
+    }
+
+    public void removeJobGroup(SubjectRI subjectRI) {
+        if (this.subjectRIS.contains(subjectRI)) {
+            for (SubjectRI jobGroup : this.subjectRIS) {
+                if (jobGroup.equals(subjectRI)) {
+                    this.subjectRIS.remove(jobGroup);
+                }
+            }
+        }
     }
 
     public void removeSession(UserSessionRI sessionRI) {
@@ -61,7 +85,6 @@ public class DBMockup implements Serializable {
         }
     }
 
-
     public ClientUser getClientUser(String uname) throws RemoteException {
         for (ClientUser ClientUser : clientUsers) {
             if (ClientUser.getUname().equals(uname)) {
@@ -71,5 +94,19 @@ public class DBMockup implements Serializable {
         return null;
     }
 
+    public ArrayList<SubjectRI> getSubjectRIS() {
+        return this.subjectRIS;
+    }
 
+    public void setSubjectRIS(ArrayList<SubjectRI> subjectRIS) {
+        this.subjectRIS = subjectRIS;
+    }
+
+    public ArrayList<ObserverRI> getWorkers() {
+        return workers;
+    }
+
+    public void setWorkers(ArrayList<ObserverRI> workers) {
+        this.workers = workers;
+    }
 }
