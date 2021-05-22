@@ -15,7 +15,7 @@ public interface UserSessionRI extends Remote {
 
     public void deleteJobGroup(SubjectRI subjectRI) throws RemoteException;
 
-    public SubjectRI createJobGroup(Task task, UserSessionRI userSessionRI) throws RemoteException;
+    public SubjectRI createJobGroup(Task task) throws RemoteException;
 
     public ArrayList<SubjectRI> listJobGroups() throws RemoteException;
 

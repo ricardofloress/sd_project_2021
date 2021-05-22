@@ -45,7 +45,7 @@ public class UserSessionImpl extends UnicastRemoteObject implements UserSessionR
     }
 
     @Override
-    public SubjectRI createJobGroup(Task task, UserSessionRI userSessionRI) throws RemoteException {
+    public SubjectRI createJobGroup(Task task) throws RemoteException {
         SubjectImpl subjectRI = new SubjectImpl(task, this);
         this.userFactoryRI.createJobGroup(subjectRI);
         return subjectRI;

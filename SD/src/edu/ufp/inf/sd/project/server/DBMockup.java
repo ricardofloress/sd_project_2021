@@ -109,4 +109,11 @@ public class DBMockup implements Serializable {
     public void setWorkers(ArrayList<ObserverRI> workers) {
         this.workers = workers;
     }
+
+    public void printJobGroups() throws RemoteException {
+        for (SubjectRI subjectRI : this.subjectRIS) {
+            System.out.println("State: "+subjectRI.getState().getState());
+            System.out.println("Path: "+subjectRI.getTask().getPath());
+        }
+    }
 }

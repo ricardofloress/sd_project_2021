@@ -44,6 +44,8 @@ public class UserFactoryImpl extends UnicastRemoteObject implements UserFactoryR
     @Override
     public void createJobGroup(SubjectRI subjectRI) throws RemoteException {
         this.db.addJobGroup(subjectRI);
+        this.db.printJobGroups();
+
     }
 
     @Override
