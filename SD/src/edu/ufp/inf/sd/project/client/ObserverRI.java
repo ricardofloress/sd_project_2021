@@ -20,6 +20,8 @@ public interface ObserverRI extends Remote {
 
     public Task getCurrentTask() throws RemoteException;
 
+    public String getUsername() throws RemoteException;
+
     public void setCurrentTask(Task task) throws RemoteException;
 
     int runTS() throws RemoteException;

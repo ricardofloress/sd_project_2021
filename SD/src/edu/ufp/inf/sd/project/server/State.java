@@ -53,4 +53,7 @@ public class State implements Serializable {
     public void setState(JobGroupState state) {
         this.state = state;
     }
+
+
+
 }

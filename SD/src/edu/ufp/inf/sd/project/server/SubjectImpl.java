@@ -1,5 +1,6 @@
 package edu.ufp.inf.sd.project.server;
 
+import edu.ufp.inf.sd.project.client.ObserverImpl;
 import edu.ufp.inf.sd.project.client.ObserverRI;
 
 import java.rmi.RemoteException;
@@ -41,7 +42,7 @@ public class SubjectImpl extends UnicastRemoteObject implements SubjectRI {
     public void attach(ObserverRI obsRI) throws RemoteException {
         this.observers.add(obsRI);
         obsRI.setJobGroup(this);
-        Logger.getLogger(this.getClass().getName()).log(Level.INFO, "Attached = {0}", new Object[]{obsRI});
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, "Attached = {0}", obsRI.getUsername());
     }
 
     @Override
@@ -113,6 +114,7 @@ public class SubjectImpl extends UnicastRemoteObject implements SubjectRI {
         this.userSessionRI.deleteJobGroup(this);
     }
 
+    @Override
     public Task getTask() {
         return task;
     }

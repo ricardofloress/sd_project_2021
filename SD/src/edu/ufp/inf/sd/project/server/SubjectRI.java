@@ -16,6 +16,8 @@ public interface SubjectRI extends Remote {
 
     public State getState() throws RemoteException;
 
+    public Task getTask() throws RemoteException;
+
     public void notifyAllWorkers() throws RemoteException;
 
     public void update(ObserverRI observerRI) throws RemoteException;

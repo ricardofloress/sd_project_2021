@@ -1,8 +1,6 @@
 package edu.ufp.inf.sd.project.client;
 
-import edu.ufp.inf.sd.project.server.JobShopRI;
-import edu.ufp.inf.sd.project.server.UserFactoryRI;
-import edu.ufp.inf.sd.project.server.UserSessionRI;
+import edu.ufp.inf.sd.project.server.*;
 import edu.ufp.inf.sd.project.util.geneticalgorithm.CrossoverStrategies;
 import edu.ufp.inf.sd.project.util.geneticalgorithm.GeneticAlgorithmJSSP;
 import edu.ufp.inf.sd.project.util.tabusearch.TabuSearchJSSP;
@@ -92,8 +90,17 @@ public class JobShopClient {
         try {
             this.userFactoryRI.register("user", "pass");
             UserSessionRI userSessionRI = this.userFactoryRI.login("user", "pass");
+            Task task= new Task("path");
+
             if(userSessionRI != null){
                 userSessionRI.print("Login Succeeded");
+                SubjectRI jobGroup = userSessionRI.createJobGroup(task);
+                ObserverImpl observer=new ObserverImpl("Jose", 5);
+                ObserverImpl observer1=new ObserverImpl("Maria", 5);
+                ObserverImpl observer2=new ObserverImpl("Alberto", 5);
+                jobGroup.attach(observer);
+                jobGroup.attach(observer1);
+                jobGroup.attach(observer1);
             }
             userSessionRI.logout();
 

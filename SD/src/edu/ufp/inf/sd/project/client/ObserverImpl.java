@@ -24,11 +24,9 @@ public class ObserverImpl extends UnicastRemoteObject implements ObserverRI {
     private Task currentTask;
 
 
-    public ObserverImpl(String username, SubjectRI subjectRI, Integer credits) throws RemoteException {
+    public ObserverImpl(String username, Integer credits) throws RemoteException {
         super();
         this.username = username;
-        this.subjectRI = subjectRI;
-        this.subjectRI.attach(this);
         this.credits = credits;
     }
 
@@ -92,6 +90,7 @@ public class ObserverImpl extends UnicastRemoteObject implements ObserverRI {
 
     }
 
+    @Override
     public String getUsername() {
         return username;
     }
