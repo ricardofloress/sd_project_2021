@@ -5,6 +5,8 @@ import edu.ufp.inf.sd.project.util.geneticalgorithm.CrossoverStrategies;
 import edu.ufp.inf.sd.project.util.geneticalgorithm.GeneticAlgorithmJSSP;
 import edu.ufp.inf.sd.project.util.tabusearch.TabuSearchJSSP;
 import edu.ufp.inf.sd.project.util.rmisetup.SetupContextRMI;
+
+import java.io.File;
 import java.rmi.RemoteException;
 import java.rmi.NotBoundException;
 import java.rmi.Remote;
@@ -90,17 +92,18 @@ public class JobShopClient {
         try {
             this.userFactoryRI.register("user", "pass");
             UserSessionRI userSessionRI = this.userFactoryRI.login("user", "pass");
-            Task task= new Task("path");
+            Task task= new Task("edu/ufp/inf/sd/project/data/abz5.txt", new File("edu/ufp/inf/sd/project/data/abz5.txt"));
 
             if(userSessionRI != null){
                 userSessionRI.print("Login Succeeded");
                 SubjectRI jobGroup = userSessionRI.createJobGroup(task);
-                ObserverImpl observer=new ObserverImpl("Jose", 5);
-                ObserverImpl observer1=new ObserverImpl("Maria", 5);
-                ObserverImpl observer2=new ObserverImpl("Alberto", 5);
-                jobGroup.attach(observer);
-                jobGroup.attach(observer1);
-                jobGroup.attach(observer1);
+                ObserverImpl observer=new ObserverImpl("Jose", 0);
+                ObserverImpl observer1=new ObserverImpl("Maria", 0);
+                ObserverImpl observer2=new ObserverImpl("Alberto", 0);
+                userSessionRI.attachWorkerToJobGroup(observer, jobGroup);
+                userSessionRI.attachWorkerToJobGroup(observer1, jobGroup);
+                userSessionRI.attachWorkerToJobGroup(observer2, jobGroup);
+                userSessionRI.notifyAllWorkersOfJobGroup(jobGroup);
             }
             userSessionRI.logout();
 

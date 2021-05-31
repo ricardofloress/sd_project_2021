@@ -27,8 +27,7 @@ public class TabuSearchJSSP {
     public int run(){
 
         try {
-
-            ProcessBuilder builder = new ProcessBuilder("/python3", SCRIPT_NAME, jsspInstance);
+            ProcessBuilder builder = new ProcessBuilder("py", SCRIPT_NAME, jsspInstance);
             builder.redirectErrorStream(true);
             Process process = builder.start();
 

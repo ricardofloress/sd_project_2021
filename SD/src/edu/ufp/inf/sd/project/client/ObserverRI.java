@@ -10,7 +10,7 @@ import java.rmi.RemoteException;
 public interface ObserverRI extends Remote {
     public void update() throws RemoteException;
 
-    public void notifyJobGroup() throws RemoteException;
+    public void notifyJobGroup(Integer result) throws RemoteException;
 
     public void setState(WorkerState state) throws RemoteException;
 
@@ -28,6 +28,10 @@ public interface ObserverRI extends Remote {
 
     public void setJobGroup(SubjectRI subjectRI) throws RemoteException;
 
+    public void addCredits(Integer credits) throws RemoteException;
+
     public SubjectRI getJobGroup() throws RemoteException;
+
+    public void changeMyState(String info) throws RemoteException;
 
 }

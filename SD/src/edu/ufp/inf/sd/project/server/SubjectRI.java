@@ -20,7 +20,7 @@ public interface SubjectRI extends Remote {
 
     public void notifyAllWorkers() throws RemoteException;
 
-    public void update(ObserverRI observerRI) throws RemoteException;
+    public void update(ObserverRI observerRI, Integer result) throws RemoteException;
 
     public void pause() throws RemoteException;
 

@@ -23,10 +23,11 @@ public interface UserSessionRI extends Remote {
 
     public void resumeJobGroup(SubjectRI subjectRI) throws RemoteException;
 
-    public void addWorkerToJobGroup(SubjectRI subjectRI, ObserverRI observerRI) throws RemoteException;
-
     public void removeWorkerToJobGroup(SubjectRI subjectRI, ObserverRI observerRI) throws RemoteException;
 
-    public void notifyWorkersOfJobGroup(SubjectRI subjectRI) throws RemoteException;
+    public void removeCreditsFromOnwer(Integer credits) throws RemoteException;
 
+    public void attachWorkerToJobGroup(ObserverRI observerRI, SubjectRI subjectRI) throws RemoteException;
+
+    public void notifyAllWorkersOfJobGroup(SubjectRI subjectRI) throws RemoteException;
 }
