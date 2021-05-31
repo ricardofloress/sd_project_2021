@@ -13,6 +13,13 @@ public class UserFactoryImpl extends UnicastRemoteObject implements UserFactoryR
         db = new DBMockup();
     }
 
+    /**
+     * @desc add a new job group to db
+     * @param uname
+     * @param pw
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public boolean register(String uname, String pw) throws RemoteException {
         if (!db.exists(uname, pw)) {
@@ -23,6 +30,13 @@ public class UserFactoryImpl extends UnicastRemoteObject implements UserFactoryR
         return false;
     }
 
+    /**
+     * @desc responsible from generating the session and returning it to the client
+     * @param uname
+     * @param pw
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public UserSessionRI login(String uname, String pw) throws RemoteException {
         if (db.exists(uname, pw)) {

@@ -28,19 +28,33 @@ public class ObserverImpl extends UnicastRemoteObject implements ObserverRI {
         super();
         this.username = username;
         this.credits = credits;
+        this.lastObserverState = new WorkerState("Created...", true);
     }
 
 
+    /**
+     * @desc updates worker state and runs TabuSearch
+     * @throws RemoteException
+     */
     @Override
     public void update() throws RemoteException {
-        this.lastObserverState = new WorkerState("Start Working...", this.username, false);
+        runTS();
+        System.out.println(this.lastObserverState.getMsg() + " ------ isAvailable: " + this.lastObserverState.getAvailable());
     }
 
+
+    /**
+     * @desc changes the state and notify the jobgroup about the result that it had
+     * @param result
+     * @throws RemoteException
+     */
     @Override
-    public void notifyJobGroup() throws RemoteException {
-        this.lastObserverState.setMsg("Finished...");
-        this.lastObserverState.setAvailable(true);
-        this.subjectRI.update(this);
+    public void notifyJobGroup(Integer result) throws RemoteException {
+/*        this.lastObserverState.setMsg("Finished...");
+        this.lastObserverState.setAvailable(true);*/
+        changeMyState(this.username + " has finished...");
+        System.out.println(this.lastObserverState.getMsg() + " ------ isAvailable: " + this.lastObserverState.getAvailable());
+        this.subjectRI.update(this, result);
     }
 
     @Override
@@ -68,14 +82,20 @@ public class ObserverImpl extends UnicastRemoteObject implements ObserverRI {
         this.currentTask = task;
     }
 
+    /**
+     * @desc runs the TabuSearch
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public int runTS() throws RemoteException {
-
         TabuSearchJSSP ts = new TabuSearchJSSP(this.currentTask.getPath());
         int makespan = ts.run();
+        System.out.println(this.username + " has returned the value: " + makespan);
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, "[TS] Makespan for {0} = {1}", new Object[]{this.currentTask.getPath(), String.valueOf(makespan)});
         this.workResult = makespan;
-        notifyJobGroup();
+        System.out.println("The work restult was: " + this.workResult);
+        notifyJobGroup(makespan);
         return makespan;
     }
 
@@ -84,10 +104,32 @@ public class ObserverImpl extends UnicastRemoteObject implements ObserverRI {
         this.subjectRI = subjectRI;
     }
 
+    /**
+     * @desc Add credits to this user
+     * @param credits
+     * @throws RemoteException
+     */
+    @Override
+    public void addCredits(Integer credits) throws RemoteException {
+        this.credits += credits;
+        System.out.println(this.username + " as now " + this.credits + " credits!  ---- added " + credits + " credits.");
+    }
+
     @Override
     public SubjectRI getJobGroup() throws RemoteException {
         return this.subjectRI;
 
+    }
+
+    /**
+     * @desc changes the state to the reverse and the message of the state
+     * @param info
+     * @throws RemoteException
+     */
+    @Override
+    public void changeMyState(String info) throws RemoteException {
+        this.lastObserverState.setAvailable(!this.lastObserverState.getAvailable());
+        this.lastObserverState.setMsg(info);
     }
 
     @Override

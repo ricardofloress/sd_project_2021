@@ -3,6 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="5924ddd1-5384-46ec-b057-930ef156a0f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/JobShopClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/JobShopClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/ObserverImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/ObserverImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/ObserverRI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/ObserverRI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/WorkerState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/client/WorkerState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/consumer/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/consumer/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/producer/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/producer/JobGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/SubjectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/SubjectImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/SubjectRI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/SubjectRI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserFactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserFactoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserSessionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserSessionImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserSessionRI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/server/UserSessionRI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/util/geneticalgorithm/GeneticAlgorithmJSSP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/util/geneticalgorithm/GeneticAlgorithmJSSP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/util/tabusearch/TabuSearchJSSP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/ufp/inf/sd/project/util/tabusearch/TabuSearchJSSP.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +71,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -92,6 +106,21 @@
       <recent name="edu.ufp.inf.sd.rmi._04_diglib.server" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -118,7 +147,18 @@
       <workItem from="1621332803353" duration="9326000" />
       <workItem from="1621459939646" duration="8492000" />
       <workItem from="1621640040352" duration="2785000" />
-      <workItem from="1621698309694" duration="601000" />
+      <workItem from="1621698309694" duration="28192000" />
+      <workItem from="1621807843770" duration="1662000" />
+      <workItem from="1621858126728" duration="1178000" />
+      <workItem from="1621950850956" duration="3274000" />
+      <workItem from="1622022141122" duration="1194000" />
+      <workItem from="1622027256250" duration="6334000" />
+      <workItem from="1622127400521" duration="2805000" />
+      <workItem from="1622221122275" duration="592000" />
+      <workItem from="1622301825838" duration="18515000" />
+      <workItem from="1622397515239" duration="7086000" />
+      <workItem from="1622410244003" duration="3531000" />
+      <workItem from="1622483465012" duration="2539000" />
     </task>
     <servers />
   </component>

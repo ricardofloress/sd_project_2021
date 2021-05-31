@@ -18,6 +18,10 @@ public class UserSessionImpl extends UnicastRemoteObject implements UserSessionR
         this.user = user;
     }
 
+    /**
+     * @desc logout from session
+     * @throws RemoteException
+     */
     @Override
     public void logout() throws RemoteException {
         UserFactoryImpl userFactory = ((UserFactoryImpl) userFactoryRI);
@@ -38,12 +42,23 @@ public class UserSessionImpl extends UnicastRemoteObject implements UserSessionR
         this.user = user;
     }
 
+    /**
+     * @desc delete a job group
+     * @param subjectRI
+     * @throws RemoteException
+     */
     @Override
     public void deleteJobGroup(SubjectRI subjectRI) throws RemoteException {
         UserFactoryImpl userFactory = ((UserFactoryImpl) userFactoryRI);
         userFactory.getDb().removeJobGroup(subjectRI);
     }
 
+    /**
+     * @desc creates a new job group
+     * @param task
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public SubjectRI createJobGroup(Task task) throws RemoteException {
         SubjectImpl subjectRI = new SubjectImpl(task, this);
@@ -66,18 +81,46 @@ public class UserSessionImpl extends UnicastRemoteObject implements UserSessionR
         subjectRI.resume();
     }
 
-    @Override
-    public void addWorkerToJobGroup(SubjectRI subjectRI, ObserverRI observerRI) throws RemoteException {
-        subjectRI.attach(observerRI);
-    }
-
+    /**
+     * @desc removes worker from job group
+     * @param subjectRI
+     * @param observerRI
+     * @throws RemoteException
+     */
     @Override
     public void removeWorkerToJobGroup(SubjectRI subjectRI, ObserverRI observerRI) throws RemoteException {
         subjectRI.detach(observerRI);
     }
 
+    /**
+     * @desc remevos credit from the owner of the job group
+     * @param credits
+     * @throws RemoteException
+     */
     @Override
-    public void notifyWorkersOfJobGroup(SubjectRI subjectRI) throws RemoteException {
+    public void removeCreditsFromOnwer(Integer credits) throws RemoteException {
+        Integer userCredits = this.user.getCredits();
+        this.user.setCredits(userCredits + credits);
+    }
+
+    /**
+     * @desc attaches a worker to jobgroup
+     * @param observerRI
+     * @param subjectRI
+     * @throws RemoteException
+     */
+    @Override
+    public void attachWorkerToJobGroup(ObserverRI observerRI, SubjectRI subjectRI) throws RemoteException {
+        subjectRI.attach(observerRI);
+    }
+
+    /**
+     * @desc notify all worker from job group to start working
+     * @param subjectRI
+     * @throws RemoteException
+     */
+    @Override
+    public void notifyAllWorkersOfJobGroup(SubjectRI subjectRI) throws RemoteException {
         subjectRI.notifyAllWorkers();
     }
 }
